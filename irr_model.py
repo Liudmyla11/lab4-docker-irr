@@ -116,8 +116,8 @@ class IRRModel:
         plt.grid(True, linestyle=':')
         plt.ylim(np.min(npv_values) - 20, np.max(npv_values) + 20)
 
-        plt.savefig("npv_plot.png")
-        print("Графік збережено у файл 'npv_plot.png'")
+        plt.savefig(filename)
+        print(f"Графік збережено у файл '{filename}'")
         plt.show()
 
 if __name__ == '__main__':
@@ -137,7 +137,8 @@ if __name__ == '__main__':
 
     model1.plot_results(r_points=[irr_n], 
                         r_range=(-0.1, 0.5), 
-                        title=f"CF = {cf1}")
+                        title=f"CF = {cf1}",
+                        filename="npv_plot_scenario1.png")
 
     print("\n--- Сценарій 2: Множинні IRR ---")
     cf2 = [-100, 230, -132]
@@ -154,4 +155,5 @@ if __name__ == '__main__':
     
     model2.plot_results(r_points=[irr_n1, irr_n2], 
                         r_range=(0, 0.3), 
-                        title=f"CF = {cf2} (Множинні IRR)")
+                        title=f"CF = {cf2} (Множинні IRR)",
+                        filename="npv_plot_scenario2.png")
