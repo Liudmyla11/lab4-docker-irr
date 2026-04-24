@@ -89,7 +89,7 @@ class IRRModel:
         
         return (a + b) / 2, self.maxiter
 
-    def plot_results(self, r_points=None, r_range=(-0.5, 0.5), title=""):
+    def plot_results(self, r_points=None, r_range=(-0.5, 0.5), title="", filename="npv_plot.png"):
         """
         Візуалізація залежності NPV(r) і позначення знайдених IRR.
         :param r_points: Список знайдених коренів (IRR) для позначення.
